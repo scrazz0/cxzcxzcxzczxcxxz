@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СКР БАРАХОЛКА</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <span class="skr">СКР</span> БАРАХОЛКА
+    </div>
+    <ul class="categories">
+      <li data-category="all">Главная</li>
+      <li data-category="Электроника">Электроника</li>
+      <li data-category="Украшения">Украшения</li>
+      <li data-category="Одежда">Одежда</li>
+      <li data-category="Поды/Вейпы">Поды/Вейпы</li>
+      <li data-category="Другое">Другое</li>
+    </ul>
+    <div class="settings">
+      <button id="theme-toggle">Сменить тему</button>
+      <select id="lang-select">
+        <option value="rus">Русский</option>
+        <option value="ukr">Українська</option>
+      </select>
+      <button id="submit-ad-btn">Создать объявление</button>
+      <button id="admin-btn">Админ панель</button>
+    </div>
+  </div>
+  <div class="main">
+    <div id="filters">
+      <input id="search" type="text" placeholder="Поиск...">
+      <input id="min-price" type="number" placeholder="Мин цена (грн)">
+      <input id="max-price" type="number" placeholder="Макс цена (грн)">
+      <select id="city-select">
+        <option value="">Все города</option>
+        <option value="Киев">Киев</option>
+        <option value="Харьков">Харьков</option>
+        <option value="Одесса">Одесса</option>
+        <option value="Днепр">Днепр</option>
+        <option value="Львов">Львов</option>
+        <!-- Добавьте больше городов по желанию -->
+      </select>
+      <button id="apply-filters">Применить</button>
+    </div>
+    <div id="ads-grid"></div>
+  </div>
+  <div id="ad-detail" class="hidden"></div>
+  <div id="submit-form" class="hidden">
+    <h2>Создать объявление</h2>
+    <input id="title" type="text" placeholder="Название">
+    <select id="category">
+      <option>Электроника</option>
+      <option>Украшения</option>
+      <option>Одежда</option>
+      <option>Поды/Вейпы</option>
+      <option>Другое</option>
+    </select>
+    <input id="price" type="number" placeholder="Цена (грн)">
+    <textarea id="description" placeholder="Описание"></textarea>
+    <input id="city" type="text" placeholder="Город">
+    <input id="username" type="text" placeholder="Telegram username (без @)">
+    <input id="photos" type="file" multiple accept="image/*">
+    <button id="submit-ad">Отправить на модерацию</button>
+    <button id="cancel-submit">Отмена</button>
+  </div>
+  <div id="admin-panel" class="hidden">
+    <h2>Админ панель</h2>
+    <input id="admin-password" type="password" placeholder="Пароль">
+    <button id="admin-login">Войти</button>
+    <div id="pending-ads" class="hidden"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
